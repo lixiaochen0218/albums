@@ -1,7 +1,7 @@
 import React from 'react';
-import App from './App';
 import { shallow } from 'enzyme';
+import Photos from './Photos';
 
 it('renders without crashing', () => {
-  shallow(<App />);
+  shallow(<Photos match={{ params: { aid: 5 } }} />);
 });
