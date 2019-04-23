@@ -28,13 +28,13 @@ const divStyle = {
 class Photos extends Component {
   constructor(props) {
     super(props);
-    console.log(props)
+    // console.log(props)
     this.state = { photos: [], open: false, url: '' };
     this.title = 'Photos';
     this.aid = props.match.params.aid;
   }
 
-  componentWillMount() {
+  componentDidMount() {
     fetch(BASE_PHOTO_URL + this.aid)
       .then(res => res.json())
       .then(json => this.setState({ photos: json }));
@@ -65,7 +65,7 @@ class Photos extends Component {
         <GridList cellHeight={150} cols={10} spacing={8}>
           {this.state.photos.map(p => (
             <GridListTile key={p.id}>
-              <img src={p.thumbnailUrl} alt={p.title} onClick={() => this.handleClickOpen(p.url)} />
+              <img className='image' src={p.thumbnailUrl} alt={p.title} onClick={() => this.handleClickOpen(p.url)} />
               <GridListTileBar
                 // title={tile.title}
                 subtitle={<span>{p.title}</span>}

@@ -38,10 +38,7 @@ class Albums extends Component {
         fetch(ALBUMS_LIST_URL)
           .then(res => res.json())
           .then(albums => {
-            for (let i = 0; i < albums.length; i++) {
-              let index = albums[i].userId - 1
-              this.users[index].albums.push(albums[i]);
-            }
+            this.mapAlbumsWithUser(albums);
             // console.log(this.users);
             this.setState({ users: this.users });
           })
@@ -49,14 +46,19 @@ class Albums extends Component {
 
   }
 
-
+  mapAlbumsWithUser(albums){
+    for (let i = 0; i < albums.length; i++) {
+      let index = albums[i].userId - 1
+      this.users[index].albums.push(albums[i]);
+    }
+  }
 
   render() {
     return (
       <div className="App">
         <AppBar position="static" color="primary">
           <Toolbar>
-            <Typography variant="h6" color="inherit">
+            <Typography className='title' variant="h6" color="inherit">
               Albums
             </Typography>
           </Toolbar>
