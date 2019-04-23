@@ -64,7 +64,7 @@ class Photos extends Component {
         </AppBar>
         <GridList cellHeight={150} cols={10} spacing={8}>
           {this.state.photos.map(p => (
-            <GridListTile key={p.id}>
+            <GridListTile className='GridListTiles' key={p.id}>
               <img className='image' src={p.thumbnailUrl} alt={p.title} onClick={() => this.handleClickOpen(p.url)} />
               <GridListTileBar
                 // title={tile.title}

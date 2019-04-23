@@ -26,9 +26,14 @@ test('expect title is Albums', async () => {
   expect(text).toBe('Albums');
 });
 
-// test('expect thumbnail count', async () => {
-//     await page.goto('http://localhost:3000/photos/1');
-//     await page.waitForSelector('GridListTile');
-//     const imageCounts = await page.$$eval('.image', images => images.length);
-//     expect(imageCounts).toBe(100);
-// });
+test('expect thumbnail count', async () => {
+  try{  
+    await page.goto('http://localhost:3000/photos/1');
+    await page.waitForSelector('.image');
+    const elements = await page.$$('.image');
+    expect(elements.length).toBe(50);
+    await page.evaluate(()=>document.querySelector('.image')[0].click())
+  } catch (err) {
+    console.error(err);
+  }
+});
