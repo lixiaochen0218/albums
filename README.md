@@ -1,4 +1,7 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Albums Project
+Shows a list of album titles returned by http://jsonplaceholder.typicode.com/albums with the name of the user the album belongs to.  
+When the album is clicked, show itÕs photos returned by http://jsonplaceholder.typicode.com/photos as thumbnails.  
+When a thumbnail is clicked, the full sized photo should be displayed. 
 
 ## Available Scripts
 
