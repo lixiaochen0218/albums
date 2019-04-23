@@ -27,13 +27,11 @@ test('expect title is Albums', async () => {
 });
 
 test('expect thumbnail count', async () => {
-  try{  
     await page.goto('http://localhost:3000/photos/1');
     await page.waitForSelector('.image');
     const elements = await page.$$('.image');
     expect(elements.length).toBe(50);
-    await page.evaluate(()=>document.querySelector('.image')[0].click())
-  } catch (err) {
-    console.error(err);
-  }
+    await page.evaluate(()=>document.querySelectorAll('.image')[0].click());
+    const dialogImage = await document.querySelector('.dialogImage');
+    console.log(dialogImage);
 });

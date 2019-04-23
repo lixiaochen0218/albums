@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Albums from './Albums';
 import { expect } from 'chai';
 import { shallow, mount } from 'enzyme';
+import MOCK_DATA from '../Mock_data';
 
 const setup = () => {
   const props = {
@@ -16,6 +17,13 @@ const setup = () => {
 }
 
 const { wrapper, props } = setup();
+
+
+
+
+beforeAll(()=> {
+  fetch.mockResponseOnce(JSON.stringify({ data: MOCK_DATA }))
+});
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
@@ -36,3 +44,7 @@ it('renders list inside Grid', () => {
     assert.isTrue(node.hasClass('ListItem'));
   })
 });
+
+// it('match mock data', () => {
+
+// })

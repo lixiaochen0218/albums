@@ -78,7 +78,7 @@ class Photos extends Component {
           aria-labelledby="alert-dialog-title"
           maxWidth='md'
         >
-          <img height={600} width={600} src={this.state.url} alt={this.state.url} />
+          <img className='dialogImage' height={600} width={600} src={this.state.url} alt={this.state.url} />
         </Dialog>
       </div>
     );
