@@ -4,6 +4,7 @@ import Albums from './Albums';
 import { expect } from 'chai';
 import { shallow, mount } from 'enzyme';
 import MOCK_DATA from '../Mock_data';
+fetch = require('jest-fetch-mock')
 
 const setup = () => {
   const props = {
@@ -40,11 +41,9 @@ it('List exists', () => {
 });
 
 it('renders list inside Grid', () => {
-  wrapper.find('.List').forEach((node) => {
+  wrapper.find('.List').forEach((node,index) => {
+    console.log(index);
     assert.isTrue(node.hasClass('ListItem'));
   })
 });
 
-// it('match mock data', () => {
-
-// })

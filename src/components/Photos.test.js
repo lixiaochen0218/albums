@@ -1,6 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Photos from './Photos';
+import MOCK_DATA2 from '../Mock_data2';
+import { APIRequest } from './Photos';
 
 const setup = () => {
   const props = {
@@ -23,7 +25,9 @@ it('renders without crashing', () => {
 });
 
 it('thumbnails exists', () => {
+  // expect(wrapper.find('.image')).toHaveLength(10);
   expect(wrapper.find('.image').exists());
+  expect(wrapper.instance().componentDidMount());
 });
 
 it('renders list inside Grid', () => {
@@ -31,3 +35,5 @@ it('renders list inside Grid', () => {
     assert.isTrue(node.hasClass('GridListTile'))
   })
 });
+
+

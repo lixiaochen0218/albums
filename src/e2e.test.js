@@ -12,6 +12,7 @@ beforeAll(async () => {
   page = await browser.newPage();
 });
 
+
 afterAll(() => {
   browser.close();
 });
@@ -32,6 +33,7 @@ test('expect thumbnail count', async () => {
     const elements = await page.$$('.image');
     expect(elements.length).toBe(50);
     await page.evaluate(()=>document.querySelectorAll('.image')[0].click());
-    const dialogImage = await document.querySelector('.dialogImage');
-    console.log(dialogImage);
+    const hrefs = await page.$eval('.dialogImage', a => a.src);
+    console.log(hrefs);
+    expect(hrefs).toBe('https://via.placeholder.com/600/92c952');
 });
