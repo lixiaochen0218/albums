@@ -3,6 +3,12 @@ Shows a list of album titles returned by http://jsonplaceholder.typicode.com/alb
 When the album is clicked, show its photos returned by http://jsonplaceholder.typicode.com/photos as thumbnails.  
 When a thumbnail is clicked, the full sized photo should be displayed. 
 
+create-react-app: react v16
+UI: Material Design(Material UI)
+
+Unit-tesing: Jest with Enzymes
+E2E: Jest with Puppeteer 
+
 ## Available Scripts
 
 In the project directory, you can run:
