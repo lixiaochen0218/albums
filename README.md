@@ -4,9 +4,12 @@ When the album is clicked, show its photos returned by http://jsonplaceholder.ty
 When a thumbnail is clicked, the full sized photo should be displayed. 
 
 create-react-app: react v16
+
 UI: Material Design(Material UI)
 
+
 Unit-tesing: Jest with Enzymes
+
 E2E: Jest with Puppeteer 
 
 ## Available Scripts
